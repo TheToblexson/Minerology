@@ -1,4 +1,4 @@
-package net.toblexson.examplemod.tags;
+package net.toblexson.minerology.tags;
 
 import net.minecraft.resources.Identifier;
 import net.minecraft.tags.BlockTags;
@@ -6,7 +6,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.toblexson.examplemod.ExampleMod;
+import net.toblexson.minerology.Minerology;
 
 public class ModTags
 {
@@ -16,7 +16,7 @@ public class ModTags
 
         private static TagKey<Item> createTag(String name)
         {
-            return ItemTags.create(Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, name));
+            return ItemTags.create(Identifier.fromNamespaceAndPath(Minerology.MOD_ID, name));
         }
     }
 
@@ -26,7 +26,7 @@ public class ModTags
 
         private static TagKey<Block> createTag(String name)
         {
-            return BlockTags.create(Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, name));
+            return BlockTags.create(Identifier.fromNamespaceAndPath(Minerology.MOD_ID, name));
         }
     }
 }

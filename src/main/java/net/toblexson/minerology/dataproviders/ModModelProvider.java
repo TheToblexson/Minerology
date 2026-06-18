@@ -1,4 +1,4 @@
-package net.toblexson.examplemod.dataproviders;
+package net.toblexson.minerology.dataproviders;
 
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
@@ -9,15 +9,15 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
-import net.toblexson.examplemod.ExampleMod;
-import net.toblexson.examplemod.registers.ModBlocks;
-import net.toblexson.examplemod.registers.ModItems;
+import net.toblexson.minerology.Minerology;
+import net.toblexson.minerology.registers.ModBlocks;
+import net.toblexson.minerology.registers.ModItems;
 
 public class ModModelProvider extends ModelProvider
 {
     public ModModelProvider(PackOutput output)
     {
-        super(output, ExampleMod.MOD_ID);
+        super(output, Minerology.MOD_ID);
     }
 
     @Override
@@ -30,6 +30,7 @@ public class ModModelProvider extends ModelProvider
 
         /* BLOCKS */
         block(blockModels, ModBlocks.VOID_METAL_ORE);
+        block(blockModels, ModBlocks.VOID_METAL_DEEPSLATE_ORE);
         block(blockModels, ModBlocks.VOID_METAL_NETHER_ORE);
         block(blockModels, ModBlocks.VOID_METAL_END_ORE);
         block(blockModels, ModBlocks.RAW_VOID_METAL_BLOCK);

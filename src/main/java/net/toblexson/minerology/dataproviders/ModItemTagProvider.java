@@ -1,26 +1,22 @@
-package net.toblexson.examplemod.dataproviders;
+package net.toblexson.minerology.dataproviders;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.ItemTags;
 import net.neoforged.neoforge.common.Tags;
-import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ItemTagsProvider;
-import net.toblexson.examplemod.ExampleMod;
-import net.toblexson.examplemod.registers.ModItems;
-import net.toblexson.examplemod.tags.ModTags;
+import net.toblexson.minerology.Minerology;
+import net.toblexson.minerology.tags.ModTags;
 
 import java.util.concurrent.CompletableFuture;
 
-import static net.toblexson.examplemod.registers.ModBlocks.*;
-import static net.toblexson.examplemod.registers.ModItems.*;
+import static net.toblexson.minerology.registers.ModBlocks.*;
+import static net.toblexson.minerology.registers.ModItems.*;
 
 public class ModItemTagProvider extends ItemTagsProvider
 {
     public ModItemTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookup)
     {
-        super(output, lookup, ExampleMod.MOD_ID);
+        super(output, lookup, Minerology.MOD_ID);
     }
 
     @Override
@@ -41,10 +37,7 @@ public class ModItemTagProvider extends ItemTagsProvider
                 .add(VOID_METAL_BLOCK.asItem());
 
         tag(Tags.Items.ORES)
-                .add(VOID_METAL_ORE.asItem())
-                .add(VOID_METAL_DEEPSLATE_ORE.asItem())
-                .add(VOID_METAL_NETHER_ORE.asItem())
-                .add(VOID_METAL_END_ORE.asItem());
+                .addTag(ModTags.Items.VOID_METAL_ORES);
 
         /* MOD */
         tag(ModTags.Items.VOID_METAL_ORES)

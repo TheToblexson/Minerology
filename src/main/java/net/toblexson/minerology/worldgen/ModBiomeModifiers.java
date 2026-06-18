@@ -1,4 +1,4 @@
-package net.toblexson.examplemod.worldgen;
+package net.toblexson.minerology.worldgen;
 
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
@@ -10,7 +10,7 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 import net.neoforged.neoforge.common.world.BiomeModifier;
 import net.neoforged.neoforge.common.world.BiomeModifiers;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
-import net.toblexson.examplemod.ExampleMod;
+import net.toblexson.minerology.Minerology;
 
 public class ModBiomeModifiers
 {
@@ -43,6 +43,6 @@ public class ModBiomeModifiers
 
     private static ResourceKey<BiomeModifier> registerKey(String name)
     {
-        return ResourceKey.create(NeoForgeRegistries.Keys.BIOME_MODIFIERS, Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, name));
+        return ResourceKey.create(NeoForgeRegistries.Keys.BIOME_MODIFIERS, Identifier.fromNamespaceAndPath(Minerology.MOD_ID, name));
     }
 }

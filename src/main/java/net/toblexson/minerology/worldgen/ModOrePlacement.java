@@ -1,4 +1,4 @@
-package net.toblexson.examplemod.worldgen;
+package net.toblexson.minerology.worldgen;
 
 import net.minecraft.world.level.levelgen.placement.*;
 

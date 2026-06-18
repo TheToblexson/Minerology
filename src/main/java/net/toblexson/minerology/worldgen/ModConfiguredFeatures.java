@@ -1,8 +1,7 @@
-package net.toblexson.examplemod.worldgen;
+package net.toblexson.minerology.worldgen;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
-import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
@@ -13,8 +12,8 @@ import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguratio
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 import net.neoforged.neoforge.common.Tags;
-import net.toblexson.examplemod.ExampleMod;
-import net.toblexson.examplemod.registers.ModBlocks;
+import net.toblexson.minerology.Minerology;
+import net.toblexson.minerology.registers.ModBlocks;
 
 public class ModConfiguredFeatures
 {
@@ -49,7 +48,7 @@ public class ModConfiguredFeatures
 
     public static ResourceKey<ConfiguredFeature<?,?>> registerKey(String name)
     {
-        return ResourceKey.create(Registries.CONFIGURED_FEATURE, Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, name));
+        return ResourceKey.create(Registries.CONFIGURED_FEATURE, Identifier.fromNamespaceAndPath(Minerology.MOD_ID, name));
     }
 
     private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstrapContext<ConfiguredFeature<?,?>> context,

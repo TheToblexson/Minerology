@@ -1,23 +1,22 @@
-package net.toblexson.examplemod.dataproviders;
+package net.toblexson.minerology.dataproviders;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
-import net.toblexson.examplemod.ExampleMod;
-import net.toblexson.examplemod.registers.ModBlocks;
-import net.toblexson.examplemod.tags.ModTags;
+import net.toblexson.minerology.Minerology;
+import net.toblexson.minerology.tags.ModTags;
 
 import java.util.concurrent.CompletableFuture;
 
-import static net.toblexson.examplemod.registers.ModBlocks.*;
+import static net.toblexson.minerology.registers.ModBlocks.*;
 
 public class ModBlockTagProvider extends BlockTagsProvider
 {
     public ModBlockTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookup)
     {
-        super(output, lookup, ExampleMod.MOD_ID);
+        super(output, lookup, Minerology.MOD_ID);
     }
 
     @Override

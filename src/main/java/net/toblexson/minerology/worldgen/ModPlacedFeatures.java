@@ -1,4 +1,4 @@
-package net.toblexson.examplemod.worldgen;
+package net.toblexson.minerology.worldgen;
 
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
@@ -11,7 +11,7 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.PlacementModifier;
-import net.toblexson.examplemod.ExampleMod;
+import net.toblexson.minerology.Minerology;
 
 import java.util.List;
 
@@ -49,7 +49,7 @@ public class ModPlacedFeatures
 
     public static ResourceKey<PlacedFeature> registerKey(String name)
     {
-        return ResourceKey.create(Registries.PLACED_FEATURE, Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, name));
+        return ResourceKey.create(Registries.PLACED_FEATURE, Identifier.fromNamespaceAndPath(Minerology.MOD_ID, name));
     }
 
     private static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key,

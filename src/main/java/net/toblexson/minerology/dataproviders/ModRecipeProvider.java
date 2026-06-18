@@ -1,7 +1,6 @@
-package net.toblexson.examplemod.dataproviders;
+package net.toblexson.minerology.dataproviders;
 
 import net.minecraft.advancements.Criterion;
-import net.minecraft.advancements.criterion.InventoryChangeTrigger;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
@@ -13,13 +12,11 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.CookingBookCategory;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.block.Block;
-import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.registries.DeferredItem;
-import net.toblexson.examplemod.ExampleMod;
-import net.toblexson.examplemod.registers.ModBlocks;
-import net.toblexson.examplemod.registers.ModItems;
-import net.toblexson.examplemod.tags.ModTags;
+import net.toblexson.minerology.Minerology;
+import net.toblexson.minerology.registers.ModBlocks;
+import net.toblexson.minerology.registers.ModItems;
+import net.toblexson.minerology.tags.ModTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -68,11 +65,11 @@ public class ModRecipeProvider extends RecipeProvider
         SimpleCookingRecipeBuilder.smelting(ingredient, RecipeCategory.MISC, CookingBookCategory.MISC, result, experience, 200)
                 .group(getSimpleRecipeName(result))
                 .unlockedBy(criterionName, criterion)
-                .save(output, ExampleMod.MOD_ID + ":" + getItemName(result) + "_from_smelting_" + ingredientName);
+                .save(output, Minerology.MOD_ID + ":" + getItemName(result) + "_from_smelting_" + ingredientName);
         SimpleCookingRecipeBuilder.blasting(ingredient, RecipeCategory.MISC, CookingBookCategory.MISC, result, experience, 200)
                 .group(getSimpleRecipeName(result))
                 .unlockedBy(criterionName, criterion)
-                .save(output, ExampleMod.MOD_ID + ":" + getItemName(result) + "_from_blasting_" + ingredientName);
+                .save(output, Minerology.MOD_ID + ":" + getItemName(result) + "_from_blasting_" + ingredientName);
     }
 
     private <T extends ItemLike> void packing(ItemLike packed, ItemLike unpacked)
@@ -84,12 +81,12 @@ public class ModRecipeProvider extends RecipeProvider
                 .define('#', unpacked)
                 .unlockedBy(getHasName(unpacked), has(unpacked))
                 .group(getSimpleRecipeName(packed))
-                .save(output, ExampleMod.MOD_ID + ":" + getConversionRecipeName(packed, unpacked));
+                .save(output, Minerology.MOD_ID + ":" + getConversionRecipeName(packed, unpacked));
         shapeless(RecipeCategory.MISC, unpacked, 9)
                 .requires(packed)
                 .unlockedBy(getHasName(packed), has(packed))
                 .group(getSimpleRecipeName(unpacked))
-                .save(output, ExampleMod.MOD_ID + ":" + getConversionRecipeName(unpacked, packed));
+                .save(output, Minerology.MOD_ID + ":" + getConversionRecipeName(unpacked, packed));
     }
 
     public static class Runner extends RecipeProvider.Runner

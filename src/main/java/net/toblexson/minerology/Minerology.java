@@ -1,23 +1,9 @@
-package net.toblexson.examplemod;
+package net.toblexson.minerology;
 
-import net.toblexson.examplemod.registers.ModBlocks;
-import net.toblexson.examplemod.registers.ModCreativeModeTabs;
-import net.toblexson.examplemod.registers.ModItems;
-import org.slf4j.Logger;
+import net.toblexson.minerology.registers.ModBlocks;
+import net.toblexson.minerology.registers.ModCreativeModeTabs;
+import net.toblexson.minerology.registers.ModItems;
 
-import com.mojang.logging.LogUtils;
-
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
@@ -27,22 +13,19 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
-import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredItem;
-import net.neoforged.neoforge.registries.DeferredRegister;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
-@Mod(ExampleMod.MOD_ID)
-public class ExampleMod {
+@Mod(Minerology.MOD_ID)
+public class Minerology
+{
     // Define mod id in a common place for everything to reference
-    public static final String MOD_ID = "examplemod";
+    public static final String MOD_ID = "minerology";
     // Directly reference a slf4j logger
 //    public static final Logger LOGGER = LogUtils.getLogger();
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
-    public ExampleMod(IEventBus modEventBus, ModContainer modContainer) {
+    public Minerology(IEventBus modEventBus, ModContainer modContainer) {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -58,9 +41,6 @@ public class ExampleMod {
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
-
-        // Register our mod's ModConfigSpec so that FML can create and load the config file for us
-        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
     private void commonSetup(FMLCommonSetupEvent event)

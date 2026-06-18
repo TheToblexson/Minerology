@@ -1,6 +1,6 @@
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
-package net.toblexson.examplemod.tags;
+package net.toblexson.minerology.tags;
 
 import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 

@@ -1,4 +1,4 @@
-package net.toblexson.examplemod.dataproviders;
+package net.toblexson.minerology.dataproviders;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
@@ -6,10 +6,10 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
-import net.toblexson.examplemod.ExampleMod;
-import net.toblexson.examplemod.worldgen.ModBiomeModifiers;
-import net.toblexson.examplemod.worldgen.ModConfiguredFeatures;
-import net.toblexson.examplemod.worldgen.ModPlacedFeatures;
+import net.toblexson.minerology.Minerology;
+import net.toblexson.minerology.worldgen.ModBiomeModifiers;
+import net.toblexson.minerology.worldgen.ModConfiguredFeatures;
+import net.toblexson.minerology.worldgen.ModPlacedFeatures;
 
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
@@ -23,6 +23,6 @@ public class ModDatapackProvider extends DatapackBuiltinEntriesProvider
 
     public ModDatapackProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries)
     {
-        super(output, registries, BUILDER, Set.of(ExampleMod.MOD_ID));
+        super(output, registries, BUILDER, Set.of(Minerology.MOD_ID));
     }
 }

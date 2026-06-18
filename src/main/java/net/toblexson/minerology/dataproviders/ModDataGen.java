@@ -1,16 +1,16 @@
-package net.toblexson.examplemod.dataproviders;
+package net.toblexson.minerology.dataproviders;
 
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
-import net.toblexson.examplemod.ExampleMod;
+import net.toblexson.minerology.Minerology;
 
 import java.util.Collections;
 import java.util.List;
 
-@EventBusSubscriber(modid = ExampleMod.MOD_ID)
+@EventBusSubscriber(modid = Minerology.MOD_ID)
 public class ModDataGen
 {
     @SubscribeEvent

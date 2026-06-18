@@ -1,4 +1,4 @@
-package net.toblexson.examplemod.registers;
+package net.toblexson.minerology.registers;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -6,13 +6,13 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import net.toblexson.examplemod.ExampleMod;
+import net.toblexson.minerology.Minerology;
 
 import java.util.function.Function;
 
 public class ModBlocks
 {
-    public static final DeferredRegister.Blocks REGISTER = DeferredRegister.createBlocks(ExampleMod.MOD_ID);
+    public static final DeferredRegister.Blocks REGISTER = DeferredRegister.createBlocks(Minerology.MOD_ID);
 
     public static final DeferredBlock<Block> VOID_METAL_ORE = block("void_metal_ore", BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_ORE));
     public static final DeferredBlock<Block> VOID_METAL_DEEPSLATE_ORE = block("void_metal_deepslate_ore", BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_IRON_ORE));
